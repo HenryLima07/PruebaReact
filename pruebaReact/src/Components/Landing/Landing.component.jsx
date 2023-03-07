@@ -4,7 +4,6 @@ import axios from "axios";
 
 import classes from "./Landing.module.scss";
 import Category from "../Category/Category.component";
-import Carousel from "./Carousel/Carousel.component";
 
 const Landing = ()=>{
     const [categories, setCategories] = useState([]);
@@ -28,28 +27,6 @@ const Landing = ()=>{
 
     return(
         <section className={classes["Landing"]}>
-
-            {/* <div className={classes["food-carousel"]}>
-            {
-                categories ? 
-                    categories.map((category, index) => {
-                        if(category.id !== slide ) return; 
-
-                        return <Carousel img={category.imagenes.normal} ID={index > 3 ? index - 1 : index} key={category.id}>
-                        </Carousel>
-                    })
-                :
-                ""
-                }
-            </div>        
-            <div className={classes["buttons-carousel"]}>
-              <span className={classes["button-carousel"]} onClick={()=>setSlide(1)}></span>
-              <span className={classes["button-carousel"]} onClick={()=>setSlide(2)}></span>
-              <span className={classes["button-carousel"]} onClick={()=>setSlide(3)}></span>
-              <span className={classes["button-carousel"]} onClick={()=>setSlide(5)}></span>
-              <span className={classes["button-carousel"]} onClick={()=>setSlide(6)}></span>
-            </div>
-         */}
             <div className={classes["Title"]}>
                 <h2>Decide tu comida favorita a un click</h2>
                 <p>
