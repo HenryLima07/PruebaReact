@@ -1,0 +1,85 @@
+@import "../../variables.module";
+@import "../../mixins.module";
+
+.aside-menu{
+    @include size(60%, 100vh);
+    width: min(400px, 400px);
+
+    padding: 0 2rem;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+
+    background-color: $dominant;
+    
+    font-family: $font-sanspro-primary;
+
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.nav-menu{
+    @include size(100%, 100vh);
+    @include flex(column, center, center);
+    gap: 1.5rem;
+
+    > svg {
+        position: absolute;
+        @include size(3rem);
+
+        top: 1rem;
+        right: 1rem;
+
+        color: black;
+
+        cursor: pointer;
+    }
+
+    >h1, h3{
+        font-family: $font-sanspro-primary;
+        font-weight: 800;
+    }
+    > h1 {
+        font-size: 3rem;
+    }
+    > h3{
+        font-size: 2.5rem;
+        color: $accent-green;
+    }
+    >button{
+        width: 100%;
+        border: none;
+        border-radius: 1rem;
+        padding: 1rem 0.5rem;
+        background-color: $accent-green;
+        color: $dominant;
+        font-size: large;
+
+        cursor: pointer;
+    }
+    >.container{
+        @include flex();
+        gap: 1rem;
+
+        max-height: 65vh;
+        min-height: 50vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+.nav{
+    &--open{
+        visibility: none;
+        transform: translateX(0vw);
+        
+        &::after {display: flex;}
+        
+    }
+    &--close{
+        visibility: visible;
+        transform: translateX(100vw);
+        &::after {display: none;}
+    }
+}

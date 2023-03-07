@@ -1,0 +1,84 @@
+@import "../../variables.module";
+@import "../../mixins.module";
+
+.Footer{
+    @include size(100%, auto);
+    @include flex();
+    background-color: $text-gray;
+    color: $text-white;
+
+    bottom: 0;
+
+    a{
+        text-decoration: none;
+
+        font-family: $font-sanspro-primary;
+        font-weight: 600;
+        color: $text-white;
+        font-size: 1.2rem;
+        
+        cursor: pointer;
+        
+        &:hover{
+            text-decoration: underline;
+            color: $accent-green;
+        }
+        
+    }
+    
+    h2{
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-family: $font-sanspro-primary;    
+        color: $text-white;
+        
+        padding-bottom: 1rem;
+        
+    }
+    > .main-information{
+        @include size(80%, auto);
+        @include flex(row, $justify: flex-start);
+
+        >.Content{
+            @include flex();
+            min-width: 50rem;
+
+            >ul{
+                @include flex(row);
+                gap: 2.5rem;
+                flex-wrap: wrap;
+
+            }
+        }
+
+        > .personal{
+            @include size(100%, auto);
+            @include flex(column, $align: flex-start);
+            padding: 2rem 2rem 1rem 2rem;
+            gap: 1rem;
+            
+
+
+            > div{
+                @include flex(row);
+                //min-width: 20rem;
+                gap: 2rem;
+                >a >svg{
+                    @include size(2rem);
+                }
+            }
+        }
+        }
+
+    >.copy{
+        @include size(100%, auto);
+        @include flex();
+        padding-bottom: 1rem;
+
+
+    }
+}
+
+.changeColor{
+    background-color: $accent-green;
+}

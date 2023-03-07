@@ -1,0 +1,36 @@
+@import "../../../mixins.module";
+@import "../../../variables.module";
+
+.container{
+    @include flex(row);
+    gap: 1.5rem;
+    > img {
+        @include size(5rem, auto);
+        border-radius: 1.2rem;
+    }
+
+    >p{
+        font-size: 1rem;
+    
+        font-weight: 600;
+
+        &.precio{
+            font-weight: 800;
+            padding: 0.6rem 0.8rem;
+            font-size: 1.2rem;
+
+            border-radius: 1rem;
+
+            background-color: lighten($color: $text-gray-alt, $amount: 62);
+        }
+    }
+
+    >figure > svg{
+        cursor: pointer;
+
+        &:hover{
+            color: $accent-blush-pink;
+        }
+    }
+    
+}

@@ -1,0 +1,31 @@
+@import "../../variables.module";
+@import "../../mixins.module";
+
+
+.Navbar{
+    width: 100%;
+    @include flex(row);
+    gap: 2.5rem;
+    background-color: $dominant;
+    >li{
+        padding: 1rem;
+        gap: 2rem;
+        >a{
+            text-decoration: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: $text-gray;
+
+            &:hover{
+                background-color: rgba($dominant, 0.5);
+            }
+        }
+    }
+}
+
+.actual-location{
+    a >{
+        color: $accent-green;
+    }
+}

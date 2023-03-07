@@ -1,0 +1,12 @@
+@import "../../../variables.module";
+@import "../../../mixins.module";
+
+>li{
+    > a{
+        text-decoration:  none;
+        font-family: $font-sanspro-primary;
+        font-size: 1.1rem;
+
+        padding: 1rem;
+    }
+}

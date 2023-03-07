@@ -1,0 +1,41 @@
+@import "../../variables.module";
+@import "../../mixins.module";
+
+.Landing{
+    @include flex();
+    padding: 3rem 0rem;
+    gap: 2rem;
+
+    >.Title{
+        padding: 0 4rem;
+        @include flex(row);
+        gap: 2rem;
+        line-height: 2rem;
+        
+        >h2{
+            min-width: 25rem;
+            line-height: 3.2rem;
+            font-size: 3rem;
+            font-weight: 400;
+            font-family: $font-IBM-headline;
+        }
+        >p{
+            font-size: 1.3rem;
+            min-width: 30rem;
+            max-width: 46rem;
+        }
+    }
+    
+    >.categories{
+        padding: 0 4rem;
+        @include flex(row);
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+.food-carousel {
+    @include size(100%, auto);
+    position: relative;
+    margin: auto;
+  }

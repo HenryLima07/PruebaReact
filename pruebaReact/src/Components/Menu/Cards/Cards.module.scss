@@ -1,0 +1,47 @@
+@import "../../../variables.module";
+@import "../../../mixins.module";
+
+
+.Category{
+    @include flex();
+
+    min-width: 10rem;
+    width: 15rem;
+
+    border-radius: 0.5rem;
+    
+    box-shadow: $shadow1;
+    
+    text-decoration: none;
+    color: $text-gray;
+    
+    > div{
+        @include flex(row);
+        cursor: pointer;
+        padding: 1rem;
+        gap: 1rem;
+        
+        >h3{
+            font-family: $font-sanspro-primary;
+            font-weight: 400;
+            font-size: 1rem;
+            max-height: 3rem;
+            overflow: hidden;
+        }
+        >button{
+            padding: 0.75rem 1.2rem;
+            border: solid 1px $accent-green;
+            border-radius: 0.4rem;
+            color: $accent-green;
+            font-weight: 600;
+            font-size: 1.2rem;
+            font-family: $font-sanspro-primary;
+            
+            background-color: transparent;
+            
+            cursor: pointer;
+        }
+    }
+}
+
+

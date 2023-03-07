@@ -1,0 +1,26 @@
+@import "../../variables.module";
+@import "../../mixins.module";
+
+
+.Category{
+    @include flex();
+
+    min-width: 14rem;
+    width: 19rem;
+    
+    box-shadow: $shadow1;
+    cursor: pointer;
+    
+    text-decoration: none;
+    color: $text-gray;
+
+    border-radius: 0.5rem;
+
+
+    >h3{
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+}
+
+

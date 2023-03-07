@@ -1,0 +1,52 @@
+@import "./variables.module";
+
+@mixin size($width, $height: $width){
+    width: $width;
+    height: $height;
+
+}
+
+@mixin flex($direction: column, $align:center, $justify:center){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+
+}
+
+@mixin img-fluid {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+@mixin font-style ($font-size, $font-weight: 400, $line-height: $theme-line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin media-hover-effect () {
+  @media (hover: hover) {
+      @content;
+  }
+}
+
+// Media query
+@mixin media-breakpoint-up($breakpoint, $direction: min-width) {
+    @media screen and ($direction: $breakpoint) {
+      @content;
+    }
+}
+
+@mixin media-double-breakpoint-up(
+  $break_min,
+  $dir_min: min-width,
+  $break_max,
+  $dir_max: max-width
+) {
+  @media screen and ($dir_min: $break_min) and ($dir_max: $break_max) {
+    @content;
+  }
+}

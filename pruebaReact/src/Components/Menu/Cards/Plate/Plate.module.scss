@@ -1,0 +1,126 @@
+@import "../../../../mixins.module";
+@import "../../../../variables.module";
+
+.plate{
+
+    @include size(60%, auto);
+    min-height: 50vh;
+    @include flex(row);
+    position: absolute;
+    background-color: $dominant;
+    z-index: 10;
+    cursor: auto;
+    
+    font-family: $font-sanspro-primary;
+    > .close{
+        position: absolute;
+        
+        top: -15px;
+        right: -15px;
+        padding: 0.5rem;
+        
+        border-radius: 50%;
+        box-shadow: $shadow2;
+        border: none;
+        background-color: $dominant;
+        
+        cursor: pointer;
+        >svg{
+            @include size(2rem);
+        }
+        
+        &:hover{
+            >svg{
+                color: $accent-green
+            }
+        }
+    }
+    > .img {
+        width: 75%;
+        min-width: 20rem;
+        position: relative;
+        
+        >img{
+            width: 36rem;
+        }
+        > p{
+            padding: 1rem;
+            background-color: rgba($complement, 0.8);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: $dominant;
+            text-align: center;
+            
+        }
+    }
+    >.information{
+        width: 20%;
+        @include flex();
+        gap: 2rem;
+        min-width: 20rem;
+        max-height: 385px;
+        padding: 2rem;
+        overflow-y: scroll;
+        
+        >h2{
+            font-weight: 800;
+            font-size: 2rem;
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.7rem;
+        }
+        >button{
+            font-size: large;
+            font-weight: 700;
+            
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            border: none;
+            
+            background-color: $accent-green;
+            color: $dominant;
+            
+            cursor: pointer;
+            
+        }
+
+        >.quantity{
+            @include flex(row);
+            gap: 1rem;
+            >h3{
+                color: $text-gray-alt;
+                font-size: 3rem;
+            }
+            >.add{
+                border: solid 2px $text-gray-alt;
+                border-radius: 100%;
+                padding: 1.2rem 1.5rem;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.view{
+    
+    @include size(100%, 100vh);
+    @include flex();
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($complement, 0.5);
+    cursor: auto;
+    
+    &--open{
+        display: flex;
+    }
+    &--close{
+        display: none;
+    }
+    
+}

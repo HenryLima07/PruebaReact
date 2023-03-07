@@ -1,0 +1,75 @@
+@import "../../variables.module";
+@import "../../mixins.module";
+
+.Header{
+    
+    @include flex(row, $justify: space-between);
+    @include size(100%, auto);
+    background-color: $dominant;
+    
+    a{
+        text-decoration: none;
+
+        font-family: $font-sanspro-primary;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: $text-gray;
+
+        cursor: pointer;
+
+
+    }
+    > .green-container{
+        @include flex(row, $justify: flex-end);
+
+        gap: 40%;
+
+        width: 65%;
+        min-width: 762px;
+        min-width: 30rem;
+        padding: 1rem;
+
+
+        background-color: $accent-green;
+
+        > nav > ul{
+
+            @include flex(row);
+            gap: 4rem;
+            color: $dominant;
+            
+            > li > a {
+                color: $dominant;
+                &:hover{
+                    text-decoration: underline;
+                }
+
+            }
+
+    }
+
+        >.shopping-cart{
+            padding: 0 1rem ;
+            align-self: flex-end;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            
+            >svg{
+                @include size(2rem);
+                color: $dominant;
+            }
+        }
+    }
+
+    /*Logo*/
+    > a{
+        padding: 0 2rem;
+        @include flex(row);
+        gap: 2rem;
+        > figure > img{
+            @include size(2.5rem);
+         }
+     }
+
+}
